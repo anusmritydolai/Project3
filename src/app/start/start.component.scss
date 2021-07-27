@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

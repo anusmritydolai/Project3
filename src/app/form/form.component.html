@@ -1,0 +1,69 @@
+<h1 style="text-align: center;">Angular Internship Task</h1>
+
+<form [formGroup]="form" *ngIf='form' style="display: flex; flex-direction: column; flex-grow: 1; align-items: center;">
+    <mat-card>
+        <h3>1. Name</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <!-- <mat-label>Name</mat-label> -->
+            <input type="text" matInput #name maxlength="100" formControlName="name">
+            <mat-hint align="end">{{name?.value?.length}} / 100</mat-hint>
+        </mat-form-field>
+        <mat-chip-list>
+            <mat-chip class="warn" *ngIf="submit && form.get('name').hasError('required')"> This question requires an answer
+            </mat-chip>
+            <mat-chip *ngIf="!submit">required</mat-chip>
+        </mat-chip-list>
+    </mat-card>
+    <mat-card>
+        <h3>2. Contact Number (Along with Country Code)</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input type="text" matInput #num maxlength="13" formControlName="contact" placeholder="+911234567890">
+            <mat-hint align="end">{{num.value.length}} / 13</mat-hint>
+        </mat-form-field>
+        <mat-chip-list>
+            <mat-chip class="warn" *ngIf="submit && form.get('contact').hasError('required')"> This question requires an answer
+            </mat-chip>
+            <mat-chip *ngIf="!submit">required</mat-chip>
+        </mat-chip-list>
+    </mat-card>
+    <mat-card>
+        <h3>3. Email ID</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input type="email" matInput #email maxlength="100" formControlName="email" placeholder="abc@gmail.com">
+            <mat-hint align="end">{{email.value.length}} / 100</mat-hint>
+        </mat-form-field>
+        <mat-chip-list>
+            <mat-chip class="warn" *ngIf="submit && form.get('email').hasError('required')"> This question requires an answer
+            </mat-chip>
+            <mat-chip class="warn" *ngIf="submit && form.get('email').hasError('email') && !form.get('email').hasError('required')">enter a valid email address – it's invalid
+            </mat-chip>
+            <mat-chip *ngIf="!submit">required</mat-chip>
+        </mat-chip-list>
+    </mat-card>   
+     <mat-card>
+        <h3>4. Source File Drive Link</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input type="text" matInput #link maxlength="100" formControlName="link">
+            <mat-hint align="end">{{link.value.length}} / 100</mat-hint>
+        </mat-form-field>
+        <mat-chip-list>
+            <mat-chip class="warn" *ngIf="submit && form.get('link').hasError('required')"> This question requires an answer
+            </mat-chip>
+            <mat-chip *ngIf="!submit">required</mat-chip>
+        </mat-chip-list>
+    </mat-card>   
+     <mat-card>
+        <h3>5. Public URL Drive Link (Hosted in any free hosting like heroku)</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input type="text" matInput #url maxlength="100" formControlName="url">
+            <mat-hint align="end">{{url.value.length}} / 100</mat-hint>
+        </mat-form-field>
+        <mat-chip-list>
+            <mat-chip class="warn" *ngIf="submit && form.get('url').hasError('required')"> This question requires an answer
+            </mat-chip>
+            <mat-chip *ngIf="!submit">required</mat-chip>
+        </mat-chip-list>
+    </mat-card>
+
+    <button mat-flat-button style="background-color: black; color: white" (click)="check()">SUBMIT</button>
+</form>
