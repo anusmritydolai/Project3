@@ -4,7 +4,8 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/Project2",
+    "site": "anu-project3",
+    "public": "dist/Project3",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -3,10 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  newsApi: 'https://api.first.org/data/v1/news',
-  countryCode: 'https://countrycode.org/api/countryCode/countryMenu',
-  countryCodeWithIndex: 'https://restcountries.eu/rest/v2/all?fields=name;alpha2Code;callingCodes'
+  production: false
 };
 
 /*
